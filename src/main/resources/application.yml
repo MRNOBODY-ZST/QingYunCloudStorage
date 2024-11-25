@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cloudstorage
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qingyun_cloudstorage
+    username: qingyun_mysql
+    password: 0mLBsWnxmpmtOgBYxtV5
