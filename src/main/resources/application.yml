@@ -7,3 +7,11 @@ spring:
     url: jdbc:mysql://localhost:3306/qingyun_cloudstorage
     username: qingyun_mysql
     password: 0mLBsWnxmpmtOgBYxtV5
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      username: default
+      password: 20040919Zst-+
+      database: 0
