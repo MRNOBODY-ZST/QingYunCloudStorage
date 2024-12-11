@@ -15,3 +15,11 @@ spring:
       username: default
       password: 20040919Zst-+
       database: 0
+
+
+minio:
+  endpoint: localhost
+  port: 9000
+  accessKey: 0mLBsWnxmpmtOgBYxtV5
+  secretKey: 3ZewiA5znoWxNUKLbNHrLQKs7hjnyejkQPEsFSd9
+  bucketName: qingyuncloudstorage

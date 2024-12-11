@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Folder {
-    private Long id;
-    private Long userId;
-    private Long parentId;
+    private String id;
+    private String userId;
+    private String parentId;
     private String bucketName;
     private String folderName;
     private LocalDateTime createTime;

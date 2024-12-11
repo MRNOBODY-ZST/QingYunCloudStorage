@@ -11,12 +11,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Share {
-    private Long id;
-    private Long userId;
-    private Long fileId;
-    private Integer duration;
+    private String id;
+    private String userId;
+    private String fileId;
+    private String duration;
     @JsonIgnore
-    private Integer status;
+    private String status;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 }

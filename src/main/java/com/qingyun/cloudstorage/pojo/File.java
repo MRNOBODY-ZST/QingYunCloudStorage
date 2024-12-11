@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class File {
-    private Long id;
-    private Long userId;
-    private Long parentId;
+    private String id;
+    private String userId;
+    private String parentId;
     private String bucketName;
     private String objectName;
     private String etag;
-    private Long size;
+    private String size;
     private String contentType;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
