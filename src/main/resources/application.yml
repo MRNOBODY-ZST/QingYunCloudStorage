@@ -23,3 +23,7 @@ minio:
   accessKey: 0mLBsWnxmpmtOgBYxtV5
   secretKey: 3ZewiA5znoWxNUKLbNHrLQKs7hjnyejkQPEsFSd9
   bucketName: qingyuncloudstorage
+
+logging:
+  level:
+    root: info

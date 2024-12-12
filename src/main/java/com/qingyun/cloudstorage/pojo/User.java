@@ -14,7 +14,7 @@ public class User {
 
     private String id;
     private String uuid;
-    private String userName;
+    private String username;
     private String userImage;
     @JsonIgnore
     private String password;

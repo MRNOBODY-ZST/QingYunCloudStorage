@@ -25,6 +25,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         user.setUserImage(null);
         user.setUuid(IdUtil.getSnowflakeNextIdStr());
         user.setPassword(DigestUtil.md5Hex(user.getPassword()));
+        user.setRole("1");
         userMapper.insert(user);
     }
 
