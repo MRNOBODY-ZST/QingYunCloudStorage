@@ -1,5 +1,12 @@
 package com.qingyun.cloudstorage.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FileStatistics {
     private String id;
     private String user_id;
