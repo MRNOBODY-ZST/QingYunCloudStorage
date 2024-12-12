@@ -28,8 +28,8 @@ public class FileController {
     }
 
     @GetMapping
-    public Response<File> getFile(@RequestParam String filename, @RequestParam String parentId) {
-        return Response.success(ResponseCode.SUCCESS, "success", fileService.getByNameAndUserId(filename, parentId));
+    public Response<File> getFile(@RequestParam String fileId) {
+        return Response.success(ResponseCode.SUCCESS, "success", fileService.getById(fileId));
     }
 
     @PostMapping
