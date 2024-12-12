@@ -12,24 +12,30 @@ import java.util.List;
 
 @Service
 public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements FileService {
+
     @Override
-    public File getByNameAndUserId(String filename) {
+    public File getByNameAndUserId(String filename, String parentId) {
         String userId = ThreadUtils.getUserId();
-        return this.getOne(new QueryWrapper<File>().eq("object_name", filename).and(wrapper -> wrapper.eq("user_id", userId).or().eq("user_id", "0")).last("LIMIT 1"));
+        return this.getOne(new QueryWrapper<File>().eq("object_name", filename)
+                .and(wrapper -> wrapper
+                        .eq("user_id", userId)
+                        .or()
+                        .eq("user_id", "0"))
+                .eq("parent_id", parentId)
+                .last("LIMIT 1"));
     }
 
     @Override
-    public List<File> getAllFilesByUserId(String userId) {
-        QueryWrapper<File> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId);
-        return this.list(queryWrapper);
-    }
-
-    @Override
-    public List<File> getFilesByDirectory(String parentId) {
+    public List<File> getByParentId(String parentId) {
         QueryWrapper<File> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id", ThreadUtils.getUserId()).eq("parent_id", parentId);
         return this.list(queryWrapper);
     }
 
+    @Override
+    public File getAvatar(String etag) {
+        QueryWrapper<File> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("etag",etag).eq("user_id","0");
+        return this.getOne(queryWrapper);
+    }
 }

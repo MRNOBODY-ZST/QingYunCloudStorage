@@ -36,10 +36,19 @@ public class UserController {
         return Response.success(ResponseCode.SUCCESS, "success", null);
     }
 
+    @PatchMapping
+    private Response<String> patchUser(User user) {
+        if (user.getId().equals(ThreadUtils.getUserId())) {
+            userService.updateById(user);
+            return Response.success(ResponseCode.SUCCESS, "success", null);
+        }
+        return Response.error(ResponseCode.ERROR, "No Privilege");
+    }
+
     @PostMapping("/login")
-    private Response<String> postUserLogin(@RequestParam String username,@RequestParam String password) {
+    private Response<String> postUserLogin(@RequestParam String username, @RequestParam String password) {
         User user = userService.lambdaQuery().eq(User::getUsername, username).one();
-        if (user == null || user.getPassword().equals(DigestUtil.md5Hex(password))) {
+        if (user == null || !user.getPassword().equals(DigestUtil.md5Hex(password))) {
             return Response.error(ResponseCode.ERROR, "Incorrect Username or Password");
         }
         Map<String, Object> claims = new HashMap<>();

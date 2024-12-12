@@ -78,7 +78,7 @@ public class MinioUtils {
                 GetPresignedObjectUrlArgs.builder()
                         .method(Method.GET)
                         .bucket(bucketName)
-
+                        .object(objectName)
                         .expiry(60 * 60) // URL expires in 1 hour
                         .build());
     }

@@ -6,9 +6,9 @@ import com.qingyun.cloudstorage.pojo.File;
 import java.util.List;
 
 public interface FileService extends IService<File> {
-    File getByNameAndUserId(String filename);
+    File getByNameAndUserId(String filename, String parentId);
 
-    List<File> getAllFilesByUserId(String userId);
+    List<File> getByParentId(String parentId);
 
-    List<File> getFilesByDirectory(String parentId);
+    File getAvatar(String etag);
 }

@@ -16,6 +16,10 @@ spring:
       password: 20040919Zst-+
       database: 0
 
+  servlet:
+    multipart:
+      max-file-size: 64GB
+      max-request-size: 64GB
 
 minio:
   endpoint: localhost
