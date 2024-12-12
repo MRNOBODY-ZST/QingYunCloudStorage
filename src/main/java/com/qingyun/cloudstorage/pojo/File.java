@@ -14,8 +14,6 @@ public class File {
     private String id;
     private String userId;
     private String parentId;
-    @JsonIgnore
-    private String bucketName;
     private String objectName;
     private String etag;
     private String size;

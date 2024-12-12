@@ -26,9 +26,9 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements Fi
     }
 
     @Override
-    public List<File> getFilesByDirectory(String userId, String parentId) {
+    public List<File> getFilesByDirectory(String parentId) {
         QueryWrapper<File> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId).eq("parent_id", parentId);
+        queryWrapper.eq("user_id", ThreadUtils.getUserId()).eq("parent_id", parentId);
         return this.list(queryWrapper);
     }
 

@@ -10,5 +10,5 @@ public interface FileService extends IService<File> {
 
     List<File> getAllFilesByUserId(String userId);
 
-    List<File> getFilesByDirectory(String userId, String parentId);
+    List<File> getFilesByDirectory(String parentId);
 }

@@ -13,7 +13,6 @@ public class Folder {
     private String id;
     private String userId;
     private String parentId;
-    private String bucketName;
     private String folderName;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;

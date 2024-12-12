@@ -7,9 +7,7 @@ import com.qingyun.cloudstorage.pojo.Folder;
 import java.util.List;
 
 public interface FolderService extends IService<Folder> {
-    Folder getByEtagAndUserId(String etag, String userId);
+    Folder getByParentIdAndFolderName(String folderName, String parentId);
 
-    List<Folder> getAllFoldersByUserId(String userId);
-
-    List<Folder> getFoldersByDirectory(String userId, String parentId);
+    List<Folder> getFolderByParentId(String parentId);
 }

@@ -31,7 +31,8 @@ public class MinioUtils {
     }
 
 
-    public File uploadFile(String objectName, MultipartFile file, String parentId) throws Exception {
+    public File uploadFile(MultipartFile file, String parentId) throws Exception {
+        String objectName = file.getOriginalFilename();
         minioClient.putObject(
                 PutObjectArgs.builder()
                         .bucket(bucketName)
@@ -52,7 +53,6 @@ public class MinioUtils {
                 null,
                 ThreadUtils.getUserId(),
                 parentId,
-                bucketName,
                 objectName,
                 stat.etag(),
                 ((Long) file.getSize()).toString(),

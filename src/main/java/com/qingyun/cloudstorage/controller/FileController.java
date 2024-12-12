@@ -31,14 +31,10 @@ public class FileController {
     }
 
     @PostMapping
-    public Response<String> postFile(@RequestParam("file") MultipartFile multipartFile, @RequestParam("public") String isPublic) {
-        String objectName = multipartFile.getOriginalFilename();
-        File file = minioUtils.uploadFile(objectName, multipartFile);
-        if (isPublic.equals("true")) {
-            file.setUserId("0");
-        }
+    public Response<Null> postFile(@RequestParam("file") MultipartFile multipartFile, @RequestParam("public") String parentId) throws Exception {
+        File file = minioUtils.uploadFile(multipartFile, parentId);
         fileService.save(file);
-        return Response.success(ResponseCode.SUCCESS, "success", file);
+        return Response.success(ResponseCode.SUCCESS, "success", null);
     }
 
     @GetMapping("/download")
