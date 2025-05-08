@@ -28,7 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.session:spring-session-data-redis'
-	implementation 'com.baomidou:mybatis-plus-spring-boot3-starter:3.5.9'
+	implementation 'com.baomidou:mybatis-plus-spring-boot3-starter:3.5.12'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'com.auth0:java-jwt:4.4.0'
